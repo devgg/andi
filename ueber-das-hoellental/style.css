@@ -13,6 +13,10 @@ body {
     color: blue;
 }
 
+.solution {
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
 
 td > div {
     font-size: 10px;
