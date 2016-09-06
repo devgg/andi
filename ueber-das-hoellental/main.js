@@ -1,21 +1,22 @@
 $(window).on('load', function () {
-    var letters = Array.apply(null, Array(27)).map(function () {
-    });
 
+    $(".solution").on("input", addLetters);
 
-    $("tr:nth-child(-n + 3) > td").on("input", function () {
-        addLetter($(this), 0);
-    });
+    function addLetters() {
+        var letters = Array.apply(null, Array(27)).map(function () {});
+        $("tr:nth-child(-n + 3) > td").each(function() {
+            addLetter(letters, $(this), 0);
+        });
+        $("tr:nth-child(4) > .editable, tr:nth-child(5) > .editable, tr:nth-child(6) > .editable").each(function() {
+            addLetter(letters, $(this), 9);
+        });
+        $("tr:nth-child(n + 7) > .editable").each(function () {
+            addLetter(letters, $(this), 18);
+        });
+        buildSolution(letters);
+    }
 
-    $("tr:nth-child(4) > .editable, tr:nth-child(5) > .editable, tr:nth-child(6) > .editable").on("input", function () {
-        addLetter($(this), 9);
-    });
-
-    $("tr:nth-child(n + 7) > .editable").on("input", function () {
-        addLetter($(this), 18);
-    });
-
-    function addLetter($this, setoff) {
+    function addLetter(letters, $this, setoff) {
         var position = parseInt($this.text());
         var letter = $this.data('value');
         if (letter !== undefined) {
@@ -27,11 +28,10 @@ $(window).on('load', function () {
             if (!isNaN(position) && position > 0 && position < 10) {
                 letters[setoff + position - 1] = letter;
             }
-            buildSolution();
         }
     }
 
-    function buildSolution() {
+    function buildSolution(letters) {
         var solution = "fgauger.com/";
         for (var i = 0; i < letters.length; i++) {
             if (letters[i] != undefined) {
