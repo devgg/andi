@@ -10,6 +10,7 @@ body {
 }
 
 .editable {
+    font-weight: normal;
     color: blue;
 }
 
@@ -36,6 +37,7 @@ td {
     height: 50px;
     border: 1px solid lightgray;
     text-align: center;
+    font-weight: bold;
 }
 
 tr:nth-child(3n) > td  {

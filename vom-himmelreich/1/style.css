@@ -38,6 +38,7 @@ body > div > div {
     font-size: 12px;
     position: absolute;
     top: 0;
+    color: green;
 }
 
 .input {
@@ -84,3 +85,10 @@ body > div > div {
     flex-direction: row;
     justify-content: center;
 }
+
+
+span {
+    color: green;
+}
+
+
