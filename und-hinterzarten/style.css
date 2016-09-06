@@ -5,7 +5,7 @@
 
 table {
     border-collapse: collapse;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 body {
@@ -55,4 +55,21 @@ td {
 #solution {
     display: flex;
     flex-direction: row;
+}
+
+#guide {
+    margin-bottom: 10px;
+}
+
+span {
+    font-size: 30px;
+}
+
+#yes {
+    color: greenyellow;
+}
+
+#no {
+    color: red;
+    text-decoration: line-through;
 }
